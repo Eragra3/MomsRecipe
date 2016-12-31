@@ -10,7 +10,7 @@
     function customController($scope) {
         /* jshint validthis:true */
         var vm = this;
-
+        
         vm.title = '';
 
         activate();
