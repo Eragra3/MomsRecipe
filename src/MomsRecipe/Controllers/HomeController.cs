@@ -8,8 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MomsRecipe.Controllers
 {
-    public class RecipeController : BaseController
+    public class HomeController : Controller
     {
-
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }

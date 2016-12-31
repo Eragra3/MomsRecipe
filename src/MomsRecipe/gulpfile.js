@@ -3,6 +3,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var inject = require('gulp-inject');
 var minifyCss = require('gulp-minify-css');
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('default', ['scripts', 'styles', 'inject']);
 
@@ -20,15 +21,19 @@ gulp.task('scripts.app', function () {
     gulp.src([
         'client/scripts/**/*.js',
         '!client/scripts/**/*.module.js'])
-        .pipe(uglify())
-        .pipe(concat('app.js'))
+        .pipe(sourcemaps.init())
+            .pipe(uglify())
+            .pipe(concat('app.js'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('wwwroot/scripts'));
 });
 
 gulp.task('scripts.app.modules', function () {
     gulp.src('client/scripts/**/*.module.js')
-        .pipe(uglify())
-        .pipe(concat('app.modules.js'))
+        .pipe(sourcemaps.init())
+            .pipe(uglify())
+            .pipe(concat('app.modules.js'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('wwwroot/scripts'));
 });
 
@@ -38,8 +43,10 @@ gulp.task('scripts.packages', function () {
         'node_modules/angular/angular.js',
         'node_modules/angular-animate/angular-animate.js',
     ])
-        .pipe(uglify())
-        .pipe(concat('packages.js'))
+        .pipe(sourcemaps.init())
+            .pipe(uglify())
+            .pipe(concat('packages.js'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('wwwroot/scripts'));
 });
 
@@ -54,7 +61,7 @@ gulp.task('styles', [
 
 gulp.task('styles.packages', function () {
     gulp.src([
-        'node_modules\bootstrap\dist\css\bootstrap.css',
+        'node_modules/bootstrap/dist/css/bootstrap.css',
     ])
         .pipe(minifyCss())
         .pipe(concat('styles.css'))
@@ -75,7 +82,7 @@ gulp.task('styles.app', function () {
  */
 
 gulp.task('inject', function () {
-    var target = gulp.src('Views/App.cshtml');
+    var target = gulp.src('Views/Home/Index.cshtml');
 
     var sources = gulp.src([
         'wwwroot/scripts/*.js',
@@ -86,5 +93,6 @@ gulp.task('inject', function () {
     });
 
     return target.pipe(inject(sources))
-      .pipe(gulp.dest('Views/'));
+      .pipe(gulp.dest('Views/Home/'));
 });
+

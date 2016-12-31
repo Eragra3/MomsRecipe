@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MomsRecipe.Controllers
 {
-    public class RecipeController : BaseController
+    public abstract class BaseController : Controller
     {
 
     }
