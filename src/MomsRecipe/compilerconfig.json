@@ -1,0 +1,9 @@
+﻿[
+  {
+    "outputFile": "client/styles/app.css",
+    "inputFile": "client/styles/app.less",
+    "minify": {
+      "enabled": false
+    }
+  }
+]
