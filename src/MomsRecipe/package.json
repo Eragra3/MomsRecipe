@@ -1,5 +1,5 @@
 {
-  "name": "MomsRecipe",
+  "name": "moms_recipe",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "Daniel Bider",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.6.1",
+    "bootstrap": "^3.3.7"
+  }
 }
