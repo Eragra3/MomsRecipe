@@ -50,6 +50,8 @@ namespace MomsRecipe
 
             app.UseApplicationInsightsExceptionTelemetry();
 
+            app.UseStaticFiles();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

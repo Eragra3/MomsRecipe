@@ -87,12 +87,12 @@ gulp.task('inject', function () {
     var sources = gulp.src([
         'wwwroot/scripts/*.js',
         'wwwroot/styles/*.css'
-    ],
-    {
+    ], {
         read: false
     });
 
-    return target.pipe(inject(sources))
-      .pipe(gulp.dest('Views/Home/'));
+    return target
+        .pipe(inject(sources, { ignorePath: 'wwwroot/' }))
+        .pipe(gulp.dest('Views/Home/'));
 });
 
