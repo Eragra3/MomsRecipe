@@ -11,6 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "angular": "^1.6.1",
-    "bootstrap": "^3.3.7"
+    "angular-animate": "^1.6.1",
+    "bootstrap": "^3.3.7",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^2.0.0"
   }
 }
