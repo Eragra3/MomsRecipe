@@ -32,13 +32,14 @@ gulp.task('scripts.app.modules', function () {
     gulp.src('client/scripts/**/*.module.js')
         .pipe(sourcemaps.init())
             .pipe(uglify())
-            .pipe(concat('app.modules.js'))
+            .pipe(concat('modules.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('wwwroot/scripts'));
 });
 
 gulp.task('scripts.packages', function () {
     gulp.src([
+        'node_modules/jquery/dist/jquery.js',
         'node_modules/bootstrap/dist/js/bootstrap.js',
         'node_modules/angular/angular.js',
         'node_modules/angular-animate/angular-animate.js',
@@ -85,7 +86,9 @@ gulp.task('inject', function () {
     var target = gulp.src('Views/Home/Index.cshtml');
 
     var sources = gulp.src([
-        'wwwroot/scripts/*.js',
+        'wwwroot/scripts/packages.js',
+        'wwwroot/scripts/modules.js',
+        'wwwroot/scripts/app.js',
         'wwwroot/styles/*.css'
     ], {
         read: false
