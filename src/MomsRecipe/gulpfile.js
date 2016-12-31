@@ -1,10 +1,16 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var inject = require('gulp-inject');
 
 gulp.task('default', ['scripts']);
 
-gulp.task('scripts', ['scripts.packages', 'scripts.app.modules', 'scripts.app']);
+gulp.task('scripts', [
+    'scripts.packages',
+    'scripts.app.modules',
+    'scripts.app',
+    'scripts.inject'
+]);
 
 gulp.task('scripts.app', function () {
     gulp.src(['client/**/*.js', '!client/**/*.module.js'])
@@ -31,4 +37,18 @@ gulp.task('scripts.packages', function () {
         .pipe(gulp.dest('wwwroot/scripts'));
 });
 
+gulp.task('scripts.inject', function () {
+    var target = gulp.src('Views/App.cshtml');
+
+    var sources = gulp.src([
+        'wwwroot/scripts/*.js',
+        'wwwroot/styles/*.css'
+    ],
+    {
+        read: false
+    });
+
+    return target.pipe(inject(sources))
+      .pipe(gulp.dest('Views/'));
+});
 
