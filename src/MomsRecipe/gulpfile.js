@@ -39,13 +39,12 @@ gulp.task('scripts.app.modules', function () {
 
 gulp.task('scripts.packages', function () {
     gulp.src([
-        'node_modules/jquery/dist/jquery.js',
-        'node_modules/bootstrap/dist/js/bootstrap.js',
-        'node_modules/angular/angular.js',
-        'node_modules/angular-animate/angular-animate.js',
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/bootstrap/dist/js/bootstrap.min.js',
+        'node_modules/angular/angular.min.js',
+        'node_modules/angular-animate/angular-animate.min.js',
     ])
         .pipe(sourcemaps.init())
-            .pipe(uglify())
             .pipe(concat('packages.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('wwwroot/scripts'));
