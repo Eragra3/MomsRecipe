@@ -44,6 +44,7 @@ gulp.task('scripts.packages', function () {
         'node_modules/angular/angular.min.js',
         'node_modules/angular-animate/angular-animate.min.js',
         'node_modules/angular-ui-router/release/angular-ui-router.min.js',
+        'node_modules/angular-ui-notification/dist/angular-ui-notification.min.js',
     ])
         .pipe(sourcemaps.init())
             .pipe(concat('packages.js'))
@@ -63,6 +64,7 @@ gulp.task('styles', [
 gulp.task('styles.packages', function () {
     gulp.src([
         'node_modules/bootstrap/dist/css/bootstrap.css',
+        'node_modules/angular-ui-notification/dist/angular-ui-notification.min.css',
     ])
         .pipe(minifyCss())
         .pipe(concat('styles.css'))
