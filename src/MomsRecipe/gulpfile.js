@@ -43,6 +43,7 @@ gulp.task('scripts.packages', function () {
         'node_modules/bootstrap/dist/js/bootstrap.min.js',
         'node_modules/angular/angular.min.js',
         'node_modules/angular-animate/angular-animate.min.js',
+        'node_modules/angular-ui-router/release/angular-ui-router.min.js',
     ])
         .pipe(sourcemaps.init())
             .pipe(concat('packages.js'))
