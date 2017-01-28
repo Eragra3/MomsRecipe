@@ -22,8 +22,8 @@ gulp.task('scripts.app', function () {
         'client/scripts/**/*.js',
         '!client/scripts/**/*.module.js'])
         .pipe(sourcemaps.init())
-            .pipe(uglify())
-            .pipe(concat('app.js'))
+        .pipe(uglify())
+        .pipe(concat('app.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('wwwroot/scripts'));
 });
@@ -31,8 +31,8 @@ gulp.task('scripts.app', function () {
 gulp.task('scripts.app.modules', function () {
     gulp.src('client/scripts/**/*.module.js')
         .pipe(sourcemaps.init())
-            .pipe(uglify())
-            .pipe(concat('modules.js'))
+        .pipe(uglify())
+        .pipe(concat('modules.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('wwwroot/scripts'));
 });
@@ -47,7 +47,7 @@ gulp.task('scripts.packages', function () {
         'node_modules/angular-ui-notification/dist/angular-ui-notification.min.js',
     ])
         .pipe(sourcemaps.init())
-            .pipe(concat('packages.js'))
+        .pipe(concat('packages.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('wwwroot/scripts'));
 });
@@ -93,8 +93,8 @@ gulp.task('inject', function () {
         'wwwroot/scripts/app.js',
         'wwwroot/styles/*.css'
     ], {
-        read: false
-    });
+            read: false
+        });
 
     return target
         .pipe(inject(sources, { ignorePath: 'wwwroot/' }))
