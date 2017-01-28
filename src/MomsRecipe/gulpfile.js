@@ -18,9 +18,11 @@ gulp.task('scripts', [
 ]);
 
 gulp.task('scripts.app', function () {
-    gulp.src([
-        'client/scripts/**/*.js',
-        '!client/scripts/**/*.module.js'])
+    gulp
+        .src([
+            'client/scripts/**/*.js',
+            '!client/scripts/**/*.module.js'
+        ])
         .pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(concat('app.js'))
