@@ -1,1 +1,10 @@
-﻿
+﻿@import "../base/_variables.scss";
+
+.header {
+    height: $height-header;
+    background-color: rgba(0,255,0,0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+}

@@ -1,0 +1,8 @@
+﻿@import "../base/_variables.scss";
+
+.main-content {
+    margin-left: $width-left-drawer;
+    padding: 20px 30px;
+    background-color: red;
+    min-height: 100%;
+}

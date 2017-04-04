@@ -9,8 +9,8 @@
 
 </head>
 <body ng-app="momsRecipe" ng-strict-di>
-    Main page
-    <button ui-sref="recipe.list">Recipe</button>
+    @this.Html.Partial("Header")
+    @this.Html.Partial("LeftDrawer")
     <div class="main-content" ui-view></div>
 
     <!-- inject:js -->

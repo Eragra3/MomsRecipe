@@ -1,5 +1,16 @@
-﻿@import '_functions';
+﻿@import '_functions.scss';
+
 @mixin fontSize($size) {
     font-size: $size; //Fallback in px
     font-size: calculateRem($size);
+}
+
+@mixin padding($t, $r, $b, $l) {
+    padding: $t $r $b $l;
+    padding: calculateRem($t) calculateRem($r) calculateRem($b) calculateRem($l);
+}
+
+@mixin margin($t, $r, $b, $l) {
+    margin: $t $r $b $l;
+    margin: calculateRem($t) calculateRem($r) calculateRem($b) calculateRem($l);
 }

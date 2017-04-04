@@ -1,11 +1,42 @@
 ﻿html {
+  height: 100%; }
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding-top: 70px; }
+
+html {
   font-size: 12px; }
 
 body {
-  font-size: 14px;
-  font-size: 0.875rem; }
+  font-size: 14px; }
 
 h1 {
-  font-size: 24px;
-  font-size: 1.5rem; }
+  font-size: 24px; }
+
+.header {
+  height: 70px;
+  background-color: rgba(0, 255, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0; }
+
+.left-drawer {
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: yellow; }
+
+.main-content {
+  margin-left: 200px;
+  padding: 20px 30px;
+  background-color: red;
+  min-height: 100%; }
+
+recipe-list {
+  display: block; }
 

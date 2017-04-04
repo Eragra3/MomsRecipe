@@ -1,4 +1,4 @@
-﻿@import '../helpers/_functions';
+﻿@import '../helpers/_functions.scss';
 @import '../helpers/_mixins.scss';
 
 html {
@@ -6,9 +6,9 @@ html {
 }
 
 body {
-    @include fontSize(14px);
+    font-size: 14px;
 }
 
 h1 {
-    @include fontSize(24px);
+    font-size: 24px;
 }

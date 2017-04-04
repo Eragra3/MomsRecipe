@@ -5,8 +5,11 @@ var inject = require('gulp-inject');
 var minifyCss = require('gulp-minify-css');
 var sourcemaps = require('gulp-sourcemaps');
 var clean = require('gulp-clean');
+var watch = require('gulp-watch');
+var batch = require('gulp-batch');
 
 gulp.task('default', ['scripts', 'styles', 'inject']);
+gulp.task('watch', ['scripts.watch', 'styles.watch']);
 
 /*
  * SCRIPTS
@@ -60,6 +63,16 @@ gulp.task('scripts.packages', ['scripts.cleanup'], function () {
         .pipe(gulp.dest('wwwroot/scripts/packages'));
 });
 
+gulp.task('scripts.watch', function () {
+    var options = {
+        read: false
+    };
+    // Endless stream mode 
+    watch('client/scripts/**/*.js', options, batch(function (events, done) {
+        gulp.start('scripts', done);
+    }));
+});
+
 /*
  * STYLES
  */
@@ -93,6 +106,16 @@ gulp.task('styles.app', ['styles.cleanup'], function () {
         .pipe(minifyCss())
         //.pipe(concat('app.css'))
         .pipe(gulp.dest('wwwroot/styles'));
+});
+
+gulp.task('styles.watch', function () {
+    var options = {
+        read: false
+    };
+    // Endless stream mode 
+    watch('client/styles/**/*.css', options, batch(function (events, done) {
+        gulp.start('styles', done);
+    }));
 });
 
 /*

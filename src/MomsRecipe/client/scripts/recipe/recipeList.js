@@ -12,7 +12,7 @@
     recipeListController.$inject = ['RecipeService'];
 
     function recipeListController(recipeService) {
-        alert('yup, I\'m working');
+        console.log('[RecipeList] loaded');
     }
 
 })();
