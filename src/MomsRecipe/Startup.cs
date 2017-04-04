@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DependancyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -38,6 +35,8 @@ namespace MomsRecipe
             services.AddApplicationInsightsTelemetry(this.Configuration);
 
             services.AddMvc();
+
+            DependanciesProvider.Register(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline

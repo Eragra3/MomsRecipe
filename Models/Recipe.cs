@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace Repository
+namespace Domain.Models
 {
     public class Recipe
     {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
         public int PeopleCount { get; set; }
 
         public int Duration { get; set; }
