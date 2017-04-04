@@ -11,8 +11,8 @@
 
     recipeListController.$inject = ['RecipeService'];
 
-    function recipeListController() {
-
+    function recipeListController(RecipeService) {
+        //
     }
 
 })();

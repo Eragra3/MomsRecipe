@@ -1,9 +1,10 @@
 ﻿[
   {
-    "outputFile": "client/styles/app.css",
-    "inputFile": "client/styles/app.less",
+    "outputFile": "client/styles/main.css",
+    "inputFile": "client/styles/main.scss",
     "minify": {
       "enabled": false
-    }
+    },
+    "sourceMap": false
   }
 ]

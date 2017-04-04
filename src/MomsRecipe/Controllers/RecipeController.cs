@@ -10,6 +10,11 @@ namespace MomsRecipe.Controllers
 {
     public class RecipeController : BaseController
     {
-
+        // GET recipe/template/{templatename}
+        [HttpGet("{templateName}")]
+        public ActionResult Get(string templateName)
+        {
+            return View(templateName);
+        }
     }
 }

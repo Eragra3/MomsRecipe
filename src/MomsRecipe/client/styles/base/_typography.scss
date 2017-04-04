@@ -1,0 +1,14 @@
+﻿@import '../helpers/_functions';
+@import '../helpers/_mixins.scss';
+
+html {
+    font-size: 12px;
+}
+
+body {
+    @include fontSize(14px);
+}
+
+h1 {
+    @include fontSize(24px);
+}
