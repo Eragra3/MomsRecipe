@@ -49,6 +49,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="client\scripts\home\" />
     <Folder Include="client\styles\pages\" />
     <Folder Include="client\styles\vendors\" />
     <Folder Include="wwwroot\" />

@@ -51,15 +51,13 @@ gulp.task('scripts.packages', ['scripts.cleanup'], function () {
     return gulp.src([
         'node_modules/jquery/dist/jquery.min.js',
         'node_modules/bootstrap/dist/js/bootstrap.min.js',
-        'node_modules/angular/angular.min.js',
+        'node_modules/angular/angular.js',
         'node_modules/angular-animate/angular-animate.min.js',
+        'node_modules/angular-resource/angular-resource.min.js',
         'node_modules/angular-ui-router/release/angular-ui-router.min.js',
         'node_modules/angular-ui-notification/dist/angular-ui-notification.min.js'
     ])
-        .pipe(sourcemaps.init())
-        .pipe(concat('packages.js'))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('wwwroot/scripts'));
+        .pipe(gulp.dest('wwwroot/scripts/packages'));
 });
 
 /*
@@ -105,7 +103,13 @@ gulp.task('inject', ['scripts', 'styles'], function () {
     var target = gulp.src('Views/Home/Index.cshtml');
 
     var sources = gulp.src([
-        'wwwroot/scripts/packages.js',
+        'wwwroot/scripts/packages/jquery.min.js',
+        'wwwroot/scripts/packages/bootstrap.min.js',
+        'wwwroot/scripts/packages/angular.js',
+        'wwwroot/scripts/packages/angular-animate.min.js',
+        'wwwroot/scripts/packages/angular-resource.min.js',
+        'wwwroot/scripts/packages/angular-ui-router.min.js',
+        'wwwroot/scripts/packages/angular-ui-notification.min.js',
         'wwwroot/scripts/modules.js',
         'wwwroot/scripts/app.js',
         'wwwroot/styles/**'

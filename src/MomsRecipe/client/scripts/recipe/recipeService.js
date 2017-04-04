@@ -3,7 +3,7 @@
 
     angular
         .module('momsRecipe.recipe')
-        .factory('recipeService', recipeService);
+        .factory('RecipeService', recipeService);
 
     recipeService.$inject = ['$resource'];
 
